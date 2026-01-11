@@ -1,0 +1,114 @@
+:root {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-tertiary: #21262d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --accent-blue: #58a6ff;
+  --accent-green: #3fb950;
+  --accent-yellow: #d29922;
+  --accent-red: #f85149;
+  --accent-purple: #a371f7;
+  --border-color: #30363d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Graph Styles */
+.container-node {
+  fill: var(--accent-blue);
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.container-node.running {
+  fill: var(--accent-green);
+}
+
+.container-node.exited {
+  fill: var(--accent-red);
+}
+
+.container-node.paused {
+  fill: var(--accent-yellow);
+}
+
+.network-node {
+  fill: var(--accent-purple);
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.volume-node {
+  fill: var(--accent-yellow);
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.link {
+  stroke: var(--text-secondary);
+  stroke-opacity: 0.6;
+  stroke-width: 2px;
+}
+
+.link.network_connection {
+  stroke: var(--accent-purple);
+}
+
+.link.volume_mount {
+  stroke: var(--accent-yellow);
+  stroke-dasharray: 5, 5;
+}
+
+.node-label {
+  font-size: 12px;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  max-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.tooltip h4 {
+  margin-bottom: 8px;
+  color: var(--accent-blue);
+}
+
+.tooltip p {
+  margin: 4px 0;
+  color: var(--text-secondary);
+}
+
+.tooltip .label {
+  color: var(--text-primary);
+  font-weight: 500;
+}
