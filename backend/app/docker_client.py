@@ -238,7 +238,6 @@ class DockerClient:
         """Détecte la catégorie d'un container basé sur son image, nom et labels"""
         name_lower = name.lower()
         image_lower = image.lower()
-        port_numbers = [p.container_port for p in ports]
 
         for category, patterns in CATEGORY_PATTERNS.items():
             # Check image patterns
